@@ -16,22 +16,23 @@
 
 package it.ozimov.springboot.mail.templating.service;
 
-import freemarker.template.Configuration;
-import it.ozimov.springboot.mail.service.TemplateService;
-import it.ozimov.springboot.mail.service.exception.TemplateException;
-import lombok.NonNull;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Strings.isNullOrEmpty;
+import static com.google.common.io.Files.getFileExtension;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.Objects;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Strings.isNullOrEmpty;
-import static com.google.common.io.Files.getFileExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+
+import freemarker.template.Configuration;
+import it.ozimov.springboot.mail.service.TemplateService;
+import it.ozimov.springboot.mail.service.exception.TemplateException;
+import lombok.NonNull;
 
 @Service
 public class FreemarkerTemplateService implements TemplateService {

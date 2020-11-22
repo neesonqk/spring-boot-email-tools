@@ -16,11 +16,10 @@
 
 package it.ozimov.springboot.mail.service;
 
-import it.ozimov.springboot.mail.service.exception.TemplateException;
-import lombok.NonNull;
-
 import java.io.IOException;
 import java.util.Map;
+
+import it.ozimov.springboot.mail.service.exception.TemplateException;
 
 /**
  * Defines a service for processing templates with a template engine
